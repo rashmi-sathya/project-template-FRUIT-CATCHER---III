@@ -114,9 +114,7 @@ class Game{
                      
                      
                  }
-                 if(frameCount % 40 === 0){
-                    this.addObstacles()
-                 }
+                 //Call the addObstacles() in such a way that obstacles appear every 40 frames. 
                  
                   if (player.index !== null) {
                       for (var i = 0; i < fruitGroup.length; i++) {
@@ -131,9 +129,7 @@ class Game{
                           
                       }
 
-                      if(obstacleGroup.isTouching(players)){
-                        gameState = 2;
-                      }
+                      //Change the gameState to 2, when the obstacleGroup touches the basket.
                   }
                 }
             
@@ -163,14 +159,15 @@ class Game{
 
 
     addObstacles()
-    {       
-            var x, y;
-            x = random(0, width-100);
-            y = 0
-            var obstacle = createSprite(x, y);
-            obstacle.addImage("obstacle", obstacleImage);
-            obstacle.velocityY = 4;
-            obstacle.scale = 0.15;
-            obstacleGroup.add(obstacle);
+    {
+       
+//Create obstacle sprites at random x-positions that fall down from the top
+          //Add the mushroom image to the obstacle. 
+                obstacle.velocityY = 4;
+          
+                obstacle.scale = 0.15;
+               // Add it to an obstacle Group.             
+           
+          
     }
 }
